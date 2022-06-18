@@ -1,0 +1,23 @@
+class ParkingSystem {
+    Map<Integer,Integer> mapOfCars=new HashMap<Integer,Integer>();
+    public ParkingSystem(int big, int medium, int small) {
+        mapOfCars.put(1,big);
+        mapOfCars.put(2,medium);
+        mapOfCars.put(3,small);
+    }
+    public boolean addCar(int carType) {
+        if(!mapOfCars.containsKey(carType))
+            return false;
+        if(mapOfCars.get(carType)>0 ){
+           mapOfCars.put(carType,mapOfCars.get(carType)-1);
+            return true;
+        }
+        return false;
+    }
+}
+
+/**
+ * Your ParkingSystem object will be instantiated and called as such:
+ * ParkingSystem obj = new ParkingSystem(big, medium, small);
+ * boolean param_1 = obj.addCar(carType);
+ */
